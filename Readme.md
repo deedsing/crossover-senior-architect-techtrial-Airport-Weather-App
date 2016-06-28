@@ -1,4 +1,7 @@
+-----------------------------
 Readme
+-----------------------------
+
 Rest implementation of Airport Weather Application system , aka AWA.
 Final project with implementaion for POST and DELETE REST endpoint
 and also the implementaion of airport loader , helper main class to
@@ -9,9 +12,9 @@ http://localhost:8080/query/hist/radius
 http://localhost:8080/query/hist/iata   
 More information on these urls can be found below.
 
-****************************************************
+-----------------------------
 Maven Instruction 
-****************************************************
+-----------------------------
 Before running a maven build , please check on the system the port 
 8080 is not being used . The test cases will fail .
 
