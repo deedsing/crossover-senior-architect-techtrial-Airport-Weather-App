@@ -27,9 +27,9 @@ File format :
 Rest URL Informations
 -----------------------------
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Description : Get list of available IATA codes of airports.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/collect/airports/
 HTTP Response:OK (200)
@@ -47,9 +47,9 @@ Output:
   "JFK"
 ]
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Description : Get Details of an airport.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/collect/airport/{String iata}
 Example :http://localhost:8080/collect/airport/EWR
@@ -84,11 +84,11 @@ Condition : IATA code invalid.
 }
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-----------------------------
 Description : Delete an airport.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : Delete 
 URL : http://localhost:8080/collect/airport/{String iata}
 Example :http://localhost:8080/collect/airport/EWR
@@ -102,11 +102,11 @@ Condition : Airport iata code doesnot exist
   "error": "NOT_ACCEPTABLE",
   "message": "No Airport with IATA code EWX exists."
 }
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-----------------------------
 Description : Create an airport
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : POST 
 URL : http://localhost:8080/collect/airport/{String iata}/{String latitude}/{String longitude} 
 Example :http://localhost:8080/collect/airport/IXC/33.33/55.55
@@ -134,11 +134,11 @@ Condition : IATA code invalid.
   "error": "BAD_REQUEST",
   "message": "Invalid IATA code. IATA code is 3-letter code"
 }
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-----------------------------
 Description : Create an airport
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : POST 
 URL : http://localhost:8080/collect/airport/ 
 Example :http://localhost:8080/collect/airport/
@@ -183,19 +183,19 @@ Condition : Model Exceptions (IATA code invalid. ICAO not valid)
   "error": "BAD_REQUEST",
   "message": "com.crossover.trial.weather.exception.ModelException: icao code is invalid , icao code must be four letter word"
 }
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-----------------------------
 Description : Get Health status Collect endpoint.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/collect/ping/
 Output: 1 (Note : Ideally a json response should be return , but as per the API interface it should return 1)
 HTTP Response:OK (200)
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Description : Get Health status Query Endpoint
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/query/ping/
 HTTP Response:OK (200)
@@ -225,9 +225,9 @@ Output:
 }
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Description : Post weather information
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : POST 
 URL : http://localhost:8080/collect/weather/mmu/humidity
 Example :http://localhost:8080/collect/weather/mmu/humidity
@@ -253,11 +253,11 @@ Condition : Model Exceptions (IATA code invalid)
   "error": "NOT_ACCEPTABLE",
   "message": "com.crossover.trial.weather.exception.DataPointException: WIND[mean=-20.0,first=0,second=4,third=10,count=10]"
 }
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-----------------------------
 Description : Get nearby weather information 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/query/weather/{String iata}/{String radius}
 EX : http://localhost:8080/query/weather/BOS/20
@@ -295,9 +295,9 @@ Error:
   "message": "Radius is a decimal number in KM, please provide a valid input"
 }
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Description : Graphical respresentation of IATA frequency. (Extras)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/query/hist/iata
 HTTP Response:OK (200)
@@ -315,9 +315,9 @@ LPL    :
 STN    : 
 JFK    : #######
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Description : Graphical respresentation of Radius frequency. (Extras)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------------
 Request : GET 
 URL : http://localhost:8080/query/hist/radius
 HTTP Response:OK (200)
@@ -330,13 +330,11 @@ Radius(KM) : Histogram
 86    : ##
 2332    : ##########
 
-----------------------
-
 
 ----------------------
 Feedback on Assignment
 ----------------------
 The assignment was good.
-I feel that for the helpfullness of candidates a detailed high level description of various rest endpoints should have been provided ,
+A detailed high level description of various rest endpoints should have been provided ,
 
 
